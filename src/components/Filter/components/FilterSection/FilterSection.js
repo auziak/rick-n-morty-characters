@@ -1,4 +1,4 @@
-import FilterButton from "../FilterRadioButton/FilterRadioButton"
+import { FilterRadioButton } from "../FilterRadioButton/FilterRadioButton"
 import Badge from "../../../Badge/Badge"
 //css
 import styles from "./FilterSection.module.scss"
@@ -28,7 +28,7 @@ const FilterSection = ({ sectionName, setOption, setPageNumber, options, selecte
       >
         <div className="accordion-body d-flex flex-wrap gap-3">
           {options.map((option, index) => (
-            <FilterButton
+            <FilterRadioButton
               name={sectionName.toLowerCase()}
               index={index}
               key={index}

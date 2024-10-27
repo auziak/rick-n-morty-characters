@@ -1,6 +1,23 @@
+import { FC } from "react"
 import "./FilterRadioButton.css"
 
-const FilterButton = ({ input, setSelectedOption, setPageNumber, index, name, selectedOption }) => {
+type Props = {
+  input: string
+  setSelectedOption: (input: string) => void
+  setPageNumber: (page: number) => void
+  index: number
+  name: string
+  selectedOption: string
+}
+
+export const FilterRadioButton: FC<Props> = ({
+  input,
+  setSelectedOption,
+  setPageNumber,
+  index,
+  name,
+  selectedOption
+}) => {
   return (
     <div>
       <div
@@ -17,10 +34,8 @@ const FilterButton = ({ input, setSelectedOption, setPageNumber, index, name, se
           id={`${name}-${index}`}
           checked={input === selectedOption ? true : false}
         />
-        <label for={`${name}-${index}`}> {input} </label>
+        <label htmlFor={`${name}-${index}`}> {input} </label>
       </div>
     </div>
   )
 }
-
-export default FilterButton
