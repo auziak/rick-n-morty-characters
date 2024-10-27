@@ -1,0 +1,10 @@
+.x:checked + label {
+  background-color: white;
+  color: #0b5ed7;
+  outline: none;
+}
+
+.form-check-input,
+.form-check-input:focus {
+  box-shadow: none;
+}
