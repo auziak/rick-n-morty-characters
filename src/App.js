@@ -10,8 +10,8 @@ import Pagination from "./components/Pagination/Pagination"
 import Filter from "./components/Filter/Filter"
 import Navbar from "./components/Navbar/Navbar"
 // pages
-import Episodes from "./Pages/Episodes"
-import Locations from "./Pages/Locations"
+import { EpisodesPage } from "./Pages/Episodes/EpisodesPage"
+import { LocationsPage } from "./Pages/Locations/LocationsPage"
 // css
 import "./App.css"
 
@@ -72,8 +72,8 @@ function App() {
           <Route path="/locations/:id" element={<CardDetails />} />
           <Route path="/episodes/:id" element={<CardDetails />} />
           <Route path="/" element={<Home />} />
-          <Route path="/locations" element={<Locations />} />
-          <Route path="/episodes" element={<Episodes />} />
+          <Route path="/locations" element={<LocationsPage />} />
+          <Route path="/episodes" element={<EpisodesPage />} />
         </Routes>
       </div>
     </Router>
