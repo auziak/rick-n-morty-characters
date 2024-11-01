@@ -19,7 +19,11 @@ const Search = ({ setSearchValue }) => {
         placeholder="Search for characters"
         ref={inputElement}
       />
-      <button className={`${styles.btn} btn btn-primary fs-5`} type="submit">
+      <button
+        className={`${styles.btn} btn btn-primary fs-5`}
+        type="submit"
+        style={{ minWidth: "180px" }}
+      >
         Search
       </button>
     </form>

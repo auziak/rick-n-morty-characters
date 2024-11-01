@@ -1,6 +1,5 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-test.rest
 # dependencies
 /node_modules
 /.pnp
@@ -20,3 +19,6 @@ test.rest
 .env.production.local
 
 npm-debug.log*
+
+# rest api test
+*test.http

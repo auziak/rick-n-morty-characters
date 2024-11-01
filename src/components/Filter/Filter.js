@@ -43,13 +43,11 @@ const Filter = props => {
   }
   return (
     <div className="col-lg-3 col-12 mb-5">
-      <div className="text-center fw-bold fs-4 mb-2">Filters</div>
-      <div
-        style={{ cursor: "pointer" }}
-        onClick={clearFilters}
-        className="btn btn-outline-info mb-3"
-      >
-        Clear All
+      <div className="d-flex justify-content-between mb-3">
+        <span className="fw-bold fs-4 ms-1">Filters:</span>
+        <span style={{ cursor: "pointer" }} onClick={clearFilters} className="btn btn-outline-info">
+          Clear All
+        </span>
       </div>
       <div className="accordion" id="filterAccordion">
         {sections.map(section => (
