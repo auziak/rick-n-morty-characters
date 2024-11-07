@@ -1,3 +1,10 @@
-# Getting Started with Create React App
+# Inspiration source
+https://www.youtube.com/watch?v=35QCQnohLg8
+https://github.com/JoyShaheb/React-Projects/tree/main/Level-1/rick-morty-wiki
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Run project
+npm i
+npm start
+
+# CRA
+So far Create React App is used, but migration to Vite is planned
