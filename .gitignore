@@ -7,8 +7,5 @@
 # production
 /build
 
-# env
-.env
-
 # rest api test
 *test.http

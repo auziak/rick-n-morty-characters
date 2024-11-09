@@ -1,10 +1,10 @@
-import { Location } from "../../entities"
+import { Location } from "../../entities";
 
 type Props = {
-  locations: Location[] | null
-  selectedLocation?: Location | null
-  setSelectedLocation: (value: Location) => void
-}
+  locations: Location[] | null;
+  selectedLocation?: Location | null;
+  setSelectedLocation: (value: Location) => void;
+};
 
 export const LocationsSelector = ({ locations, selectedLocation, setSelectedLocation }: Props) => {
   return (
@@ -18,9 +18,9 @@ export const LocationsSelector = ({ locations, selectedLocation, setSelectedLoca
       >
         <option value="0">Not selected</option>
         {locations?.map(location => {
-          return <option value={location.id}>{location.name}</option>
+          return <option value={location.id}>{location.name}</option>;
         })}
       </select>
     </div>
-  )
-}
+  );
+};

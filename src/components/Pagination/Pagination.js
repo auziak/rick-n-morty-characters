@@ -1,21 +1,21 @@
-import { useEffect, useState } from "react"
-import ReactPaginate from "react-paginate"
+import { useEffect, useState } from "react";
+import ReactPaginate from "react-paginate";
 // styles
-import "./Pagination.css"
+import "./Pagination.css";
 
 const Pagination = ({ info, pageNumber, setPageNumber }) => {
   const pageChange = data => {
-    setPageNumber(data.selected + 1)
-  }
-  const [width, setWidth] = useState(window.innerWidth)
+    setPageNumber(data.selected + 1);
+  };
+  const [width, setWidth] = useState(window.innerWidth);
   const updateDimentions = () => {
-    setWidth(window.innerWidth)
-  }
+    setWidth(window.innerWidth);
+  };
 
   useEffect(() => {
-    window.addEventListener("resize", updateDimentions)
-    return () => window.removeEventListener("resize", updateDimentions)
-  }, [])
+    window.addEventListener("resize", updateDimentions);
+    return () => window.removeEventListener("resize", updateDimentions);
+  }, []);
 
   return (
     <ReactPaginate
@@ -33,7 +33,7 @@ const Pagination = ({ info, pageNumber, setPageNumber }) => {
       pageClassName="page-item"
       pageLinkClassName="page-link"
     />
-  )
-}
+  );
+};
 
-export default Pagination
+export default Pagination;

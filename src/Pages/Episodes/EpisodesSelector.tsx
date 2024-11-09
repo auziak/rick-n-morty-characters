@@ -1,10 +1,10 @@
-import { Episode } from "../../entities"
+import { Episode } from "../../entities";
 
 type Props = {
-  episodes: Episode[] | null
-  selectedEpisode?: Episode | null
-  setSelectedEpisode: (value: Episode) => void
-}
+  episodes: Episode[] | null;
+  selectedEpisode?: Episode | null;
+  setSelectedEpisode: (value: Episode) => void;
+};
 
 export const EpisodesSelector = ({ episodes, selectedEpisode, setSelectedEpisode }: Props) => {
   return (
@@ -18,9 +18,9 @@ export const EpisodesSelector = ({ episodes, selectedEpisode, setSelectedEpisode
       >
         <option value="0">Not selected</option>
         {episodes?.map(episode => {
-          return <option value={episode.id}>{episode.name}</option>
+          return <option value={episode.id}>{episode.name}</option>;
         })}
       </select>
     </div>
-  )
-}
+  );
+};

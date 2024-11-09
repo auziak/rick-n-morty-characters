@@ -1,4 +1,4 @@
-import FilterSection from "./components/FilterSection/FilterSection"
+import FilterSection from "./components/FilterSection/FilterSection";
 
 const options = {
   statusOptions: ["Alive", "Dead", "Unknown"],
@@ -13,12 +13,12 @@ const options = {
     "Disease",
     "Robot",
     "Cronenberg",
-    "Planet"
+    "Planet",
   ],
-  genderOptions: ["female", "male", "genderless", "unknown"]
-}
+  genderOptions: ["female", "male", "genderless", "unknown"],
+};
 
-const sections = ["Status", "Species", "Gender"]
+const sections = ["Status", "Species", "Gender"];
 
 const Filter = props => {
   const {
@@ -28,19 +28,19 @@ const Filter = props => {
     setStatus,
     selectedGender,
     selectedSpecies,
-    selectedStatus
-  } = props
+    selectedStatus,
+  } = props;
   const selectedOptions = {
     Gender: selectedGender,
     Species: selectedSpecies,
-    Status: selectedStatus
-  }
+    Status: selectedStatus,
+  };
   const clearFilters = () => {
-    setStatus("")
-    setGender("")
-    setSpecies("")
-    setPageNumber(1)
-  }
+    setStatus("");
+    setGender("");
+    setSpecies("");
+    setPageNumber(1);
+  };
   return (
     <div className="col-lg-3 col-12 mb-5">
       <div className="d-flex justify-content-between mb-3">
@@ -61,7 +61,7 @@ const Filter = props => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Filter
+export default Filter;

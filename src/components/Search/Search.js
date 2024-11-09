@@ -1,13 +1,13 @@
-import { useRef } from "react"
-import styles from "./Search.module.scss"
+import { useRef } from "react";
+import styles from "./Search.module.scss";
 
-const Search = ({ setSearchValue }) => {
-  const inputElement = useRef(null)
+const Search = ({ setSearchText }) => {
+  const inputElement = useRef(null);
 
   const handleSubmit = (e, value) => {
-    e.preventDefault()
-    setSearchValue(value)
-  }
+    e.preventDefault();
+    setSearchText(value);
+  };
   return (
     <form
       className={`${styles.search} d-flex flex-sm-row flex-column align-items-center justify-content-center gap-3 mb-5`}
@@ -27,7 +27,7 @@ const Search = ({ setSearchValue }) => {
         Search
       </button>
     </form>
-  )
-}
+  );
+};
 
-export default Search
+export default Search;

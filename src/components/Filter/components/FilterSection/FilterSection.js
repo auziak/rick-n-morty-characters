@@ -1,10 +1,10 @@
-import { FilterRadioButton } from "../FilterRadioButton/FilterRadioButton"
-import Badge from "../../../Badge/Badge"
+import { FilterRadioButton } from "../FilterRadioButton/FilterRadioButton";
+import Badge from "../../../Badge/Badge";
 //css
-import styles from "./FilterSection.module.scss"
+import styles from "./FilterSection.module.scss";
 
 const FilterSection = ({ sectionName, setOption, setPageNumber, options, selectedOptions }) => {
-  const selectedOption = selectedOptions[sectionName]
+  const selectedOption = selectedOptions[sectionName];
   return (
     <div className="accordion-item">
       <h2 className="accordion-header" id={`filter${sectionName}Header`}>
@@ -48,7 +48,7 @@ const FilterSection = ({ sectionName, setOption, setPageNumber, options, selecte
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default FilterSection
+export default FilterSection;
