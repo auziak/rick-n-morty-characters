@@ -3,5 +3,5 @@ const CardLine = ({ title, value }) => (
     <span className="fw-bold">{`${title} : `}</span>
     {value}
   </div>
-)
-export default CardLine
+);
+export default CardLine;

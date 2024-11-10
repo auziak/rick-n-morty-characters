@@ -1,28 +1,28 @@
-import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
-import CardLine from "./CardLine/CardLine"
-import Badge from "../../Badge/Badge"
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import Badge from "../../Badge/Badge";
+import CardLine from "./CardLine/CardLine";
 
 const CardDetails = () => {
-  const { id } = useParams()
-  const [fetchedData, updateFetchedData] = useState([])
-  const { name, location, origin, gender, image, status, species } = fetchedData
+  const { id } = useParams();
+  const [fetchedData, updateFetchedData] = useState([]);
+  const { name, location, origin, gender, image, status, species } = fetchedData;
 
   const characterCharacteristic = [
     { title: "Gender", value: gender },
     { title: "Location", value: location?.name },
     { title: "Origin", value: origin?.name },
-    { title: "Species", value: species }
-  ]
+    { title: "Species", value: species },
+  ];
 
-  const api = `https://rickandmortyapi.com/api/character/${id}`
+  const api = `https://rickandmortyapi.com/api/character/${id}`;
 
   useEffect(() => {
-    ;(async function () {
-      const data = await fetch(api).then(res => res.json())
-      updateFetchedData(data)
-    })()
-  }, [api])
+    (async () => {
+      const data = await fetch(api).then(res => res.json());
+      updateFetchedData(data);
+    })();
+  }, [api]);
 
   return (
     <div className="container d-flex justify-content-center mb-5">
@@ -39,7 +39,7 @@ const CardDetails = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CardDetails
+export default CardDetails;

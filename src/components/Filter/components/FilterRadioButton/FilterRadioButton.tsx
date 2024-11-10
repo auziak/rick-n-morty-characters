@@ -1,14 +1,14 @@
-import { FC } from "react"
-import "./FilterRadioButton.css"
+import { FC } from "react";
+import "./FilterRadioButton.css";
 
 type Props = {
-  input: string
-  setSelectedOption: (input: string) => void
-  setPageNumber: (page: number) => void
-  index: number
-  name: string
-  selectedOption: string
-}
+  input: string;
+  setSelectedOption: (input: string) => void;
+  setPageNumber: (page: number) => void;
+  index: number;
+  name: string;
+  selectedOption: string;
+};
 
 export const FilterRadioButton: FC<Props> = ({
   input,
@@ -16,15 +16,15 @@ export const FilterRadioButton: FC<Props> = ({
   setPageNumber,
   index,
   name,
-  selectedOption
+  selectedOption,
 }) => {
   return (
     <div>
       <div
         className="form-check mt-1"
         onClick={() => {
-          setSelectedOption(input)
-          setPageNumber(1)
+          setSelectedOption(input);
+          setPageNumber(1);
         }}
       >
         <input
@@ -37,5 +37,5 @@ export const FilterRadioButton: FC<Props> = ({
         <label htmlFor={`${name}-${index}`}> {input} </label>
       </div>
     </div>
-  )
-}
+  );
+};

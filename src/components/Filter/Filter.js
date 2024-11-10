@@ -1,4 +1,5 @@
-import FilterSection from "./components/FilterSection/FilterSection"
+import { Search } from "../Search/Search";
+import FilterSection from "./components/FilterSection/FilterSection";
 
 const options = {
   statusOptions: ["Alive", "Dead", "Unknown"],
@@ -13,34 +14,37 @@ const options = {
     "Disease",
     "Robot",
     "Cronenberg",
-    "Planet"
+    "Planet",
   ],
-  genderOptions: ["female", "male", "genderless", "unknown"]
-}
+  genderOptions: ["female", "male", "genderless", "unknown"],
+};
 
-const sections = ["Status", "Species", "Gender"]
+const sections = ["Status", "Species", "Gender"];
 
 const Filter = props => {
   const {
+    searchText,
+    setSearchText,
     setPageNumber,
     setGender,
     setSpecies,
     setStatus,
     selectedGender,
     selectedSpecies,
-    selectedStatus
-  } = props
+    selectedStatus,
+  } = props;
   const selectedOptions = {
     Gender: selectedGender,
     Species: selectedSpecies,
-    Status: selectedStatus
-  }
+    Status: selectedStatus,
+  };
   const clearFilters = () => {
-    setStatus("")
-    setGender("")
-    setSpecies("")
-    setPageNumber(1)
-  }
+    setSearchText("")
+    setStatus("");
+    setGender("");
+    setSpecies("");
+    setPageNumber(1);
+  };
   return (
     <div className="col-lg-3 col-12 mb-5">
       <div className="d-flex justify-content-between mb-3">
@@ -49,6 +53,7 @@ const Filter = props => {
           Clear All
         </span>
       </div>
+      <Search searchText={searchText} setSearchText={setSearchText} />
       <div className="accordion" id="filterAccordion">
         {sections.map(section => (
           <FilterSection
@@ -61,7 +66,7 @@ const Filter = props => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Filter
+export default Filter;
