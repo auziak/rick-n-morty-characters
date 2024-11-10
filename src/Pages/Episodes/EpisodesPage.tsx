@@ -33,23 +33,16 @@ export const EpisodesPage = () => {
 
   return (
     <>
-      <h1 className="text-center mb-3">
-        Episode name : <span className="text-primary">{selectedEpisode?.name || "Unknown"}</span>
-      </h1>
       <div className="container">
         <div className="row mb-3">
-          <h5 className="text-center">Air Date: {selectedEpisode?.air_date || "Unknown"}</h5>
-          <div className="row">
-            <div className="col-lg-3 col-12 mb-4">
-              <h4 className="text-center mb-4">Pick Episode</h4>
-              <EpisodesSelector
-                episodes={episodes?.results ?? []}
-                selectedEpisode={selectedEpisode}
-                setSelectedEpisode={setSelectedEpisode}
-              />
-            </div>
-            <CardsList pageRoute="/episodes/" results={characters} />
+          <div className="col-lg-3 col-12 mb-4">
+            <EpisodesSelector
+              episodes={episodes?.results ?? []}
+              selectedEpisode={selectedEpisode}
+              setSelectedEpisode={setSelectedEpisode}
+            />
           </div>
+          <CardsList pageRoute="/episodes/" results={characters} />
         </div>
       </div>
     </>

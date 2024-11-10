@@ -8,7 +8,11 @@ type Props = {
 
 export const LocationsSelector = ({ locations, selectedLocation, setSelectedLocation }: Props) => {
   return (
-    <div className="input-group mb-3">
+    <div className="col mb-3">
+      <div>
+        <h5 className="my-2">Dimension: {selectedLocation?.dimension || "Unknown"}</h5>
+        <h5 className="my-2">Type: {selectedLocation?.type || "Unknown"}</h5>
+      </div>
       <select
         onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
           setSelectedLocation(locations?.find(ep => String(ep.id) === e.target.value)!)

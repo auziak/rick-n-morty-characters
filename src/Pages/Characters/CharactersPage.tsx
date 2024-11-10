@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { CardsList } from "../../components/Cards/CardsList";
 import Filter from "../../components/Filter/Filter";
 import Pagination from "../../components/Pagination/Pagination";
-import Search from "../../components/Search/Search";
 import { Characters } from "../../entities";
 
 export const CharactersPage = () => {
@@ -27,11 +26,11 @@ export const CharactersPage = () => {
 
   return (
     <>
-      <h1 className="text-center mb-3">Characters</h1>
       <div className="container">
         <div className="row">
-          <Search setSearchText={setSearchText} />
           <Filter
+            searchText={searchText}
+            setSearchText={setSearchText}
             setPageNumber={setPageNumber}
             setGender={setGender}
             setSpecies={setSpecies}

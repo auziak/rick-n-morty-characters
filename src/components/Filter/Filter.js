@@ -1,3 +1,4 @@
+import { Search } from "../Search/Search";
 import FilterSection from "./components/FilterSection/FilterSection";
 
 const options = {
@@ -22,6 +23,8 @@ const sections = ["Status", "Species", "Gender"];
 
 const Filter = props => {
   const {
+    searchText,
+    setSearchText,
     setPageNumber,
     setGender,
     setSpecies,
@@ -36,6 +39,7 @@ const Filter = props => {
     Status: selectedStatus,
   };
   const clearFilters = () => {
+    setSearchText("")
     setStatus("");
     setGender("");
     setSpecies("");
@@ -49,6 +53,7 @@ const Filter = props => {
           Clear All
         </span>
       </div>
+      <Search searchText={searchText} setSearchText={setSearchText} />
       <div className="accordion" id="filterAccordion">
         {sections.map(section => (
           <FilterSection

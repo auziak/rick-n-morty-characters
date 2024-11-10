@@ -8,12 +8,13 @@ type Props = {
 
 export const EpisodesSelector = ({ episodes, selectedEpisode, setSelectedEpisode }: Props) => {
   return (
-    <div className="input-group mb-3">
+    <div className="col mb-3">
+      <h5 className="mb-3">Air Date: {selectedEpisode?.air_date || "Unknown"}</h5>
       <select
         onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
           setSelectedEpisode(episodes?.find(ep => String(ep.id) === e.target.value)!)
         }
-        className="form-select"
+        className="form-select pl-0"
         value={selectedEpisode?.id}
       >
         <option value="0">Not selected</option>
