@@ -10,12 +10,10 @@ const badgeClass = {
 type Props = {
   text: string;
   status: keyof typeof badgeClass;
-  styles: Record<string, unknown> | string;
+  styles?: string;
   additionalClass: string;
 };
 
-const Badge: FC<Props> = ({ text, status, styles = "", additionalClass }) => (
+export const Badge: FC<Props> = ({ text, status, styles = "", additionalClass }) => (
   <div className={`${styles} badge  bg-${badgeClass[status]} ${additionalClass}`}>{text}</div>
 );
-
-export default Badge;

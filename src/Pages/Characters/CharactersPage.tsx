@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { CardsList } from "../../components/Cards/CardsList";
 import Filter from "../../components/Filter/Filter";
 import Pagination from "../../components/Pagination/Pagination";
+import { apiUrl } from "../../constants";
 import { Characters } from "../../entities";
 
 export const CharactersPage = () => {
@@ -13,7 +14,7 @@ export const CharactersPage = () => {
   const [status, setStatus] = useState("");
   const data = fetchedData;
 
-  const url = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${searchText}&gender=${gender}&species=${species}&status=${status}`;
+  const url = `${apiUrl}/character/?page=${pageNumber}&name=${searchText}&gender=${gender}&species=${species}&status=${status}`;
 
   // TODO: Error handling
   useEffect(() => {

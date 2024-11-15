@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import Badge from "../Badge/Badge";
+import { Badge } from "../Badge";
 // css
 import styles from "./Cards.module.scss";
 

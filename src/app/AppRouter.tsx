@@ -1,6 +1,6 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 // components
-import CardDetails from "../components/Cards/CardDetails/CardDetails";
+import { CardDetails } from "../components/Cards/CardDetails/CardDetails";
 import Navbar from "../components/Navbar/Navbar";
 // pages
 import { CharactersPage } from "../Pages/Characters/CharactersPage";

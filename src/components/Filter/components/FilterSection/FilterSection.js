@@ -1,5 +1,5 @@
+import { Badge } from "../../../Badge";
 import { FilterRadioButton } from "../FilterRadioButton/FilterRadioButton";
-import Badge from "../../../Badge/Badge";
 //css
 import styles from "./FilterSection.module.scss";
 

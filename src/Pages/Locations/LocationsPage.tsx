@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { CardsList } from "../../components/Cards/CardsList";
+import { apiUrl } from "../../constants";
 import { Character, Location, Locations } from "../../entities";
 import { LocationsSelector } from "./LocationsSelector";
 
-const locationsApi = `https://rickandmortyapi.com/api/location`;
+const locationsApi = `${apiUrl}/location`;
 
 export const LocationsPage = () => {
   const [locations, setLocations] = useState<Locations | null>(null);
