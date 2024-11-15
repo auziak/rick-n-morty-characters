@@ -1,10 +1,26 @@
 import { Badge } from "../../../Badge";
+import { FilterOptions, FilterSections } from "../../Filter";
 import { FilterRadioButton } from "../FilterRadioButton/FilterRadioButton";
 //css
 import styles from "./FilterSection.module.scss";
 
-const FilterSection = ({ sectionName, setOption, setPageNumber, options, selectedOptions }) => {
+type Props = {
+  sectionName: FilterSections;
+  setOption: (option: string) => void;
+  setPageNumber: (page: number) => void;
+  options: string[];
+  selectedOptions: FilterOptions;
+};
+
+export const FilterSection = ({
+  sectionName,
+  setOption,
+  setPageNumber,
+  options,
+  selectedOptions,
+}: Props) => {
   const selectedOption = selectedOptions[sectionName];
+
   return (
     <div className="accordion-item">
       <h2 className="accordion-header" id={`filter${sectionName}Header`}>
@@ -40,7 +56,7 @@ const FilterSection = ({ sectionName, setOption, setPageNumber, options, selecte
           ))}
           <button
             type="button"
-            class={`${styles.btn} btn btn-outline-info btn-sm`}
+            className={`${styles.btn} btn btn-outline-info btn-sm`}
             onClick={() => setOption("")}
           >
             Clear {sectionName}
@@ -50,5 +66,3 @@ const FilterSection = ({ sectionName, setOption, setPageNumber, options, selecte
     </div>
   );
 };
-
-export default FilterSection;

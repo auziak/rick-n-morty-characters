@@ -1,5 +1,22 @@
+import { INITIAL_PAGE } from "../../constants";
 import { Search } from "../Search/Search";
-import FilterSection from "./components/FilterSection/FilterSection";
+import { FilterSection } from "./components/FilterSection";
+
+export type FilterSections = "Status" | "Species" | "Gender";
+
+export type FilterOptions = Record<FilterSections, string>;
+
+type Props = {
+  searchText: string;
+  setSearchText: (value: string) => void;
+  selectedGender: string;
+  setSelectedGender: (value: string) => void;
+  selectedSpecies: string;
+  setSelectedSpecies: (value: string) => void;
+  selectedStatus: string;
+  setSelectedStatus: (value: string) => void;
+  setPageNumber: (value: number) => void;
+};
 
 const options = {
   statusOptions: ["Alive", "Dead", "Unknown"],
@@ -19,31 +36,33 @@ const options = {
   genderOptions: ["female", "male", "genderless", "unknown"],
 };
 
-const sections = ["Status", "Species", "Gender"];
+const sections: FilterSections[] = ["Status", "Species", "Gender"];
 
-const Filter = props => {
+export const Filter = (props: Props) => {
   const {
     searchText,
     setSearchText,
     setPageNumber,
-    setGender,
-    setSpecies,
-    setStatus,
+    setSelectedGender,
+    setSelectedSpecies,
+    setSelectedStatus,
     selectedGender,
     selectedSpecies,
     selectedStatus,
   } = props;
-  const selectedOptions = {
+
+  const selectedOptions: FilterOptions = {
     Gender: selectedGender,
     Species: selectedSpecies,
     Status: selectedStatus,
   };
+
   const clearFilters = () => {
-    setSearchText("")
-    setStatus("");
-    setGender("");
-    setSpecies("");
-    setPageNumber(1);
+    setSearchText("");
+    setSelectedStatus("");
+    setSelectedGender("");
+    setSelectedSpecies("");
+    setPageNumber(INITIAL_PAGE);
   };
   return (
     <div className="col-lg-3 col-12 mb-5">
@@ -59,8 +78,8 @@ const Filter = props => {
           <FilterSection
             sectionName={section}
             setPageNumber={setPageNumber}
-            setOption={props[`set${section}`]}
-            options={options[`${section.toLowerCase()}Options`]}
+            setOption={props[`setSelected${section}`]}
+            options={options[`${section.toLowerCase()}Options` as keyof typeof options]}
             selectedOptions={selectedOptions}
           />
         ))}
@@ -68,5 +87,3 @@ const Filter = props => {
     </div>
   );
 };
-
-export default Filter;

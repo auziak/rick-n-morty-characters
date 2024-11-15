@@ -1,3 +1,5 @@
+import { Info } from "./shared";
+
 export type Episode = {
   id: number;
   name: string;
@@ -9,11 +11,6 @@ export type Episode = {
 };
 
 export type Episodes = {
-  info: {
-    count: number;
-    pages: number;
-    next: string | null;
-    prev: string | null;
-  };
+  info: Info;
   results: Episode[];
 };

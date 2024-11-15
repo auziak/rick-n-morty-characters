@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { CardsList } from "../../components/Cards/CardsList";
-import Filter from "../../components/Filter/Filter";
-import Pagination from "../../components/Pagination/Pagination";
-import { apiUrl } from "../../constants";
+import { Filter } from "../../components/Filter";
+import { Pagination } from "../../components/Pagination";
+import { API_URL, INITIAL_PAGE } from "../../constants";
 import { Characters } from "../../entities";
 
 export const CharactersPage = () => {
-  const [pageNumber, setPageNumber] = useState(1);
+  const [pageNumber, setPageNumber] = useState(INITIAL_PAGE);
   const [searchText, setSearchText] = useState("");
   const [fetchedData, setFetchedData] = useState<Characters | null>(null);
   const [gender, setGender] = useState("");
@@ -14,7 +14,7 @@ export const CharactersPage = () => {
   const [status, setStatus] = useState("");
   const data = fetchedData;
 
-  const url = `${apiUrl}/character/?page=${pageNumber}&name=${searchText}&gender=${gender}&species=${species}&status=${status}`;
+  const url = `${API_URL}/character/?page=${pageNumber}&name=${searchText}&gender=${gender}&species=${species}&status=${status}`;
 
   // TODO: Error handling
   useEffect(() => {
@@ -32,13 +32,13 @@ export const CharactersPage = () => {
           <Filter
             searchText={searchText}
             setSearchText={setSearchText}
-            setPageNumber={setPageNumber}
-            setGender={setGender}
-            setSpecies={setSpecies}
-            setStatus={setStatus}
             selectedGender={gender}
+            setSelectedGender={setGender}
             selectedSpecies={species}
+            setSelectedSpecies={setSpecies}
             selectedStatus={status}
+            setSelectedStatus={setStatus}
+            setPageNumber={setPageNumber}
           />
           <CardsList pageRoute="/" results={data?.results || []} />
         </div>

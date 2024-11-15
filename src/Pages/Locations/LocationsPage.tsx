@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { CardsList } from "../../components/Cards/CardsList";
-import { apiUrl } from "../../constants";
+import { API_URL } from "../../constants";
 import { Character, Location, Locations } from "../../entities";
 import { LocationsSelector } from "./LocationsSelector";
 
-const locationsApi = `${apiUrl}/location`;
+const locationsApi = `${API_URL}/location`;
 
 export const LocationsPage = () => {
   const [locations, setLocations] = useState<Locations | null>(null);

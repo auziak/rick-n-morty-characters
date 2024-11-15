@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { apiUrl } from "../../../constants";
+import { API_URL } from "../../../constants";
 import { Character } from "../../../entities";
 import { Badge } from "../../Badge";
 import { CardLine } from "./CardLine";
@@ -17,7 +17,7 @@ export const CardDetails = () => {
     { title: "Species", value: species },
   ];
 
-  const api = `${apiUrl}character/${id}`;
+  const api = `${API_URL}character/${id}`;
 
   useEffect(() => {
     (async () => {

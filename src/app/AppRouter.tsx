@@ -1,7 +1,7 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 // components
 import { CardDetails } from "../components/Cards/CardDetails/CardDetails";
-import Navbar from "../components/Navbar/Navbar";
+import { Navbar } from "../components/Navbar";
 // pages
 import { CharactersPage } from "../Pages/Characters/CharactersPage";
 import { EpisodesPage } from "../Pages/Episodes/EpisodesPage";

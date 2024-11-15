@@ -5,6 +5,7 @@
   box-shadow: 1px 3px 9px rgba(0, 0, 0, 0.25);
   padding: 9px 15px;
 }
+
 .input:focus {
   outline: none;
 }
@@ -14,8 +15,11 @@
   box-shadow: 1px 3px 9px rgba(0, 0, 0, 0.25);
 }
 
+/* TODO: make variables for media queries */
 @media (max-width: 576px) {
   .btn {
     width: 100%;
   }
-}/*# sourceMappingURL=Search.module.css.map */
+}
+
+/*# sourceMappingURL=Search.module.css.map */

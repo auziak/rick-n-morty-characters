@@ -2,6 +2,7 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import { Badge } from "../Badge";
 // css
+import { CharacterStatus } from "../../entities";
 import styles from "./Cards.module.scss";
 
 type Props = {
@@ -9,7 +10,7 @@ type Props = {
   id: number;
   image: string;
   name: string;
-  status: "Dead" | "Alive" | "unknown" | "info";
+  status: CharacterStatus;
   location: { name: string };
 };
 

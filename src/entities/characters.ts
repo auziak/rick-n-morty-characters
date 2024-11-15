@@ -1,4 +1,6 @@
-type CharacterStatus = "Dead" | "Alive" | "unknown" | "info";
+import { Info } from "./shared";
+
+export type CharacterStatus = "Dead" | "Alive" | "unknown" | "info";
 
 export type Character = {
   id: number;
@@ -22,11 +24,6 @@ export type Character = {
 };
 
 export type Characters = {
-  info: {
-    count: number;
-    pages: number;
-    next: string | null;
-    prev: string | null;
-  };
+  info: Info;
   results: Character[];
 };

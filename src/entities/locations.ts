@@ -1,3 +1,5 @@
+import { Info } from "./shared";
+
 export type Location = {
   id: number;
   name: string;
@@ -9,12 +11,7 @@ export type Location = {
 };
 
 export type Locations = {
-  info: {
-    count: number;
-    pages: number;
-    next: string | null;
-    prev: string | null;
-  };
+  info: Info;
   results: Location[];
   url: string | null;
   created: string;

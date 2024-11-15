@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { INITIAL_PAGE } from "../../../../constants";
 import "./FilterRadioButton.css";
 
 type Props = {
@@ -24,7 +25,7 @@ export const FilterRadioButton: FC<Props> = ({
         className="form-check mt-1"
         onClick={() => {
           setSelectedOption(input);
-          setPageNumber(1);
+          setPageNumber(INITIAL_PAGE);
         }}
       >
         <input
